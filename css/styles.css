@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.color-pick {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.color-pick p {
+    padding-left: 12%;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    animation: idle 1s alternate ease infinite;
+}
+
+@keyframes idle {
+    from {
+        padding-bottom: 150px;
+    }
+    to {
+        padding-bottom: 250px;
+    }
+}
+
+header {
+    height: 10vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    height: 80vh;
+    color: white;
+
+    background-image: url("../img/bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    display: grid;
+    grid-template-columns: 1fr 600px 1fr;
+}
+
+.buttons {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons input {
+    z-index: 100;
+    width: 200px;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    position: relative;
+    color: white;
+    border: 1px solid rgba(255,255,255,.4);
+    background: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.buttons input:hover {
+    background: rgba(255,255,255,.2);
+}
+
+.buttons input.active {
+    background: rgba(255,255,255,.2);
+}
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(6, auto);
+    grid-gap: 5px;
+    width: 600px;
+    height: 600px;
+    margin: auto 0;
+}
+
+.tutorial {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.square {
+    background-color: #8d8d8d;
+    cursor: pointer;
+    position: relative;
+}
+
+.square-bg {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color: rgba(28, 17, 70, 0.644);
+    display: none;
+    z-index: 10;
+}
+
+footer {
+    height: 10vh;
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

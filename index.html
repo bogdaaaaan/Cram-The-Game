@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/filling.js"></script>
+    <script defer src="js/script.js"></script>
+    <title>Cram The Game</title>
+</head>
+<body>
+   
+    <header>
+        <h1>Cram The Game</h1>
+    </header>
+
+    <main>
+        <div class="color-pick" id="pick">
+            <p>Pick start position</p>
+        </div>
+
+
+        <div class="buttons">
+            <input type="button" value="Vertical" id="vertical" onclick="pickVertical()">
+            <input type="button" value="Horizontal" id="horizontal" onclick="pickHorizontal()">
+        </div> 
+        <div class="board">
+            <!--Filling board from js-->
+        </div>
+        <div class="tutorial">
+            <p>
+                Игра ведется на прямоугольной доске, такой как квадрат 6 × 6. 
+                <br><br>
+                У двух игроков есть набор домино, которые они по очереди кладут на сетку. 
+                Игрок может поставить домино горизонтально или вертикально. 
+                <br><br>
+                В игре проигрывает игрок, который не может выставить на поле домино.
+            </p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Made by Bogdan Glechkovskiy</p>
+        <p>Cram The Game<br>prototype v.0.0.0</p>
+    </footer>
+
+</body>
+</html>
