@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/filling.js"></script>
+    <script defer src="js/visual.js"></script>
     <script defer src="js/script.js"></script>
     <title>Cram The Game</title>
 </head>
@@ -13,13 +14,37 @@
    
     <header>
         <h1>Cram The Game</h1>
+        <div class="settings" id="settings-button">
+            <img src="img/settings.svg" alt="settings">
+        </div>
+
     </header>
 
     <main>
+        
         <div class="color-pick" id="pick">
             <p>Pick start position</p>
         </div>
 
+        <div class="settings-screen" id="settings-screen-id">
+            <div class="settings-open">
+                <div>
+                    <button id="easy-button" onclick="changeDifficulty(id)">Easy</button>
+                </div>
+                <div>
+                    <button id="medium-button" onclick="changeDifficulty(id)">Medium</button>
+                </div>
+                <div>
+                    <button id="hard-button" onclick="changeDifficulty(id)">Hard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="winner-screen" id="endgame">
+            <input id="game-result" readonly></input>
+            <p>Wanna try again?</p>
+            <input type="button" id="retry-button" value="Retry" onclick="document.location.reload()">
+        </div>
 
         <div class="buttons">
             <input type="button" value="Vertical" id="vertical" onclick="pickVertical()">
@@ -42,6 +67,7 @@
     
     <footer>
         <p>Made by Bogdan Glechkovskiy</p>
+        <input type="text" id="games-history" readonly>
         <p>Cram The Game<br>prototype v.0.0.0</p>
     </footer>
 

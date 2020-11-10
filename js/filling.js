@@ -10,4 +10,11 @@ window.onload = function() {
         var coords = coordsY + '-' + coordsX;
         document.querySelector('.board').insertAdjacentHTML('beforeend', divSquare.replace('$coordinates', coords));
     }
+
+    if (localStorage.getItem('score') === 'null') {
+        document.getElementById('games-history').value = '0:0';
+    } else {
+        document.getElementById('games-history').value = localStorage.getItem('score');
+    }
+    
 }

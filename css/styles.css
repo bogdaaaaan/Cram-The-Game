@@ -6,6 +6,52 @@ body {
     
 }
 
+.settings-screen {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    z-index: 100;
+    
+}
+
+.settings-screen.active{
+    display: flex;
+}
+
+.settings-open {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 80%;
+    width: 30%;
+}
+
+.settings-open button {
+    width: 200px;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    position: relative;
+    color: white;
+    border: 1px solid rgba(255,255,255,.4);
+    background: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.settings-open button:hover {
+    background: rgba(255,255,255,.2);
+}
+
 .color-pick {
     position: absolute;
     display: flex;
@@ -14,6 +60,55 @@ body {
     width: 100%;
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.winner-screen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#game-result {
+    color: white;
+    font-size: 34px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.winner-screen p {
+    font-size: 22px;
+}
+
+#retry-button {
+    width: 200px;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    position: relative;
+    color: white;
+    border: 1px solid rgba(255,255,255,.4);
+    background: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#retry-button:hover {
+    background: rgba(255,255,255,.2);
 }
 
 .color-pick p {
@@ -42,6 +137,15 @@ header {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+    position: relative;
+}
+
+.settings {
+    width: 50px;
+    position: absolute;
+    right: 1%;
+    top: 20%;
+    filter: invert(1);
 }
 
 header h1 {
@@ -139,4 +243,22 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+footer p {
+    width: 33%;
+    text-align: center;
+}
+
+footer input {
+    width: 34%;
+}
+
+#games-history {
+    color: white;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    text-align: center;
 }
