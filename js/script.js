@@ -6,6 +6,9 @@
 var currentTurn = "Player";
 var currentIter = 0;
 
+if (localStorage.length < 1) {
+    localStorage.setItem('difficulty', 'medium');
+}
 if (localStorage.getItem('difficulty') === 'null') {
     var difficulty = 'medium';
 } else {

@@ -11,6 +11,9 @@ window.onload = function() {
         document.querySelector('.board').insertAdjacentHTML('beforeend', divSquare.replace('$coordinates', coords));
     }
 
+    if (localStorage.length < 1) {
+        localStorage.setItem('score', '0:0');
+    }
     if (localStorage.getItem('score') === 'null') {
         document.getElementById('games-history').value = '0:0';
     } else {
