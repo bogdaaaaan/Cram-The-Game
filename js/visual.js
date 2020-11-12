@@ -79,7 +79,7 @@ function updateScore(currentTurn) {
 
 
 
-//settings 
+// settings 
 let x = document.querySelector("#settings-screen-id");
 document.getElementById('settings-button').addEventListener('click', () => {
     x.classList.toggle('active');
