@@ -23,6 +23,53 @@ function pickHorizontal() {
     console.log('Changed pos to: ' + currentPos);
 }
 
+
+function setSquare(id) {
+    currentIter++;
+    var new_X = id.slice(2,3)-1;
+    var new_Y = id.slice(0,1)-1;
+    var new_idX = 0;
+    var new_idY = 0;
+
+
+    if (currentPos === 'vertical') {
+        new_idX = id.slice(2,3);
+        new_idY = Number(id.slice(0,1)) + 1;
+        if (new_idY == 7) {
+            new_idY = 5;
+        }
+    } else {
+        new_idX = Number(id.slice(2,3)) + 1;
+        new_idY = id.slice(0,1);
+        if (new_idX == 7) {
+            new_idX = 5;
+        }
+    }
+
+    if (area[new_Y][new_X] === 1 || area[new_Y][new_X] === 2 || area[new_idY-1][new_idX-1] === 1 || area[new_idY-1][new_idX-1] === 2) {
+        alert('Текущий блок уже занят!');
+        return;
+    } else {
+        area[new_Y][new_X] = 1;
+        area[new_idY-1][new_idX-1] = 1;
+        document.getElementById(id).style.backgroundColor = "blue";
+        document.getElementById(new_idY + "-" + new_idX).style.backgroundColor = "blue";
+    }
+
+
+    if(checkWinner() === null) {
+        currentTurn = "Opponent";
+        opponentMove();
+    } 
+    else if (checkWinner() == currentTurn){
+        var result = currentTurn + " Wins!";
+        console.log(result);
+        updateScore(currentTurn);
+        document.getElementById('game-result').value = result;
+        document.getElementById('endgame').style.display = 'flex';
+    }
+}
+
 function visualBorder(id, pos, inout) {
     var square = document.getElementById(id).querySelector(".square-bg");
 
