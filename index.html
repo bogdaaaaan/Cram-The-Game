@@ -46,8 +46,13 @@
         </div>
 
         <div class="buttons">
-            <input type="button" value="Vertical" id="vertical" onclick="pickVertical()">
-            <input type="button" value="Horizontal" id="horizontal" onclick="pickHorizontal()">
+            <div>
+                <input type="button" value="Vertical" id="vertical" onclick="pickVertical()">
+                <input type="button" value="Horizontal" id="horizontal" onclick="pickHorizontal()">
+            </div>
+            <div>
+                <input type="button" value="UNDO" id="undo-button" onclick="undoTurn()">
+            </div>
         </div> 
         <div class="board">
             <!--Filling board from js-->
@@ -67,7 +72,7 @@
     <footer>
         <p>Made by Bogdan Glechkovskiy</p>
         <input type="text" id="games-history" readonly>
-        <p>Cram The Game<br>prototype v.1.0.0</p>
+        <p>Cram The Game<br>prototype v.1.1.0</p>
     </footer>
 
 </body>

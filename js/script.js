@@ -9,9 +9,12 @@ if (localStorage.getItem('difficulty') === 'null') {
 console.log('current difficulty is ' + difficulty);
 
 
+
 //difficulty check
 var firstCheck;
 firstCheck = (difficulty === 'easy') ? 3 : (difficulty === 'medium') ? 5 : 7;
+
+var historyGame = [];
 
 var area = [
     [0,0,0,0,0,0],
@@ -70,8 +73,8 @@ function isAvailableSquareLeft() {
     return array;
 }
 
-
 function opponentMove() {
+    console.log('opponent move');
     let bestScore = -Infinity;
     let move;
     let array = isAvailableSquareLeft();
@@ -127,12 +130,25 @@ function opponentMove() {
         if(move.pos === 'horizontal') {
             area[move.i][move.j] = 2;
             area[move.i][move.q] = 2;
+            let y1 = move.i;
+            let x1 = move.j;
+            let y2 = move.i;
+            let x2 = move.q;
+            historyGame.push({y1, x1, y2, x2});
+
             document.getElementById((move.i+1) + "-" + (move.j+1)).style.backgroundColor = "red";
             document.getElementById((move.i+1) + "-" + (move.q+1)).style.backgroundColor = "red";
         }
         else {
             area[move.j][move.i] = 2;
             area[move.q][move.i] = 2;
+            let y1 = move.j;
+            let x1 = move.i;
+            let y2 = move.q;
+            let x2 = move.i;
+            historyGame.push({y1, x1, y2, x2});
+
+
             document.getElementById((move.j+1) + "-" + (move.i+1)).style.backgroundColor = "red";
             document.getElementById((move.q+1) + "-" + (move.i+1)).style.backgroundColor = "red";
         }
@@ -145,13 +161,14 @@ function opponentMove() {
             document.getElementById('endgame').style.display = 'flex';
         }
         currentTurn = "Player";
+        console.log(historyGame);
+        console.log('player move');
     }
 }
 
 function AlphaBetaDecision(area, depth, isMaximizing, alpha, beta) {
     let winner = checkWinner();
     if (winner !== null) {
-        //console.log(winner);
         return scores[winner];
     } else if (depth === 0) {
         return scores["Equal"];
@@ -239,3 +256,4 @@ function AlphaBetaDecision(area, depth, isMaximizing, alpha, beta) {
         }
     }
 }
+

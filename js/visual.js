@@ -52,13 +52,23 @@ function setSquare(id) {
     } else {
         area[new_Y][new_X] = 1;
         area[new_idY-1][new_idX-1] = 1;
+
+        let y1 = new_Y;
+        let x1 = new_X;
+        let y2 = new_idY-1;
+        let x2 = new_idX-1;
+        historyGame.push({y1, x1, y2, x2});
+
         document.getElementById(id).style.backgroundColor = "blue";
         document.getElementById(new_idY + "-" + new_idX).style.backgroundColor = "blue";
+
+
     }
 
 
     if(checkWinner() === null) {
         currentTurn = "Opponent";
+        console.log(historyGame);
         opponentMove();
     } 
     else if (checkWinner() == currentTurn){
@@ -150,4 +160,27 @@ function changeDifficulty(id) {
         }
     }
     
+}
+
+function undoTurn() {
+    if (historyGame.length < 2) { 
+        alert('Not a single move has been made yet!');
+        return;
+    }
+    let lastOpponentMove = historyGame[historyGame.length-1];
+    area[lastOpponentMove.y1][lastOpponentMove.x1] = 0;
+    area[lastOpponentMove.y2][lastOpponentMove.x2] = 0;
+
+    document.getElementById((lastOpponentMove.y1+1) + "-" + (lastOpponentMove.x1+1)).style.backgroundColor = "#8d8d8d";
+    document.getElementById((lastOpponentMove.y2+1) + "-" + (lastOpponentMove.x2+1)).style.backgroundColor = "#8d8d8d";
+    historyGame.pop();
+
+    let lastPlayerMove = historyGame[historyGame.length-1];
+    area[lastPlayerMove.y1][lastPlayerMove.x1] = 0;
+    area[lastPlayerMove.y2][lastPlayerMove.x2] = 0;
+
+
+    document.getElementById((lastPlayerMove.y1+1) + "-" + (lastPlayerMove.x1+1)).style.backgroundColor = "#8d8d8d";
+    document.getElementById((lastPlayerMove.y2+1) + "-" + (lastPlayerMove.x2+1)).style.backgroundColor = "#8d8d8d";
+    historyGame.pop();
 }
