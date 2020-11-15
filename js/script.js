@@ -69,7 +69,10 @@ function isAvailableSquareLeft() {
         return false;
     }
     // optional
-    shuffle(array);
+
+    if (currentIter < 5) {
+        shuffle(array);
+    }
     return array;
 }
 
