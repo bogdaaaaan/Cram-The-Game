@@ -1,9 +1,6 @@
 # Cram-The-Game
-Мета роботи - вивчити основні підходи до формалізації алгоритмів знаходження рішень задач в умовах протидії.
-Ознайомитися з підходами до програмування алгоритмів штучного інтелекту в іграх з повною інформацією. 
+The purpose of the work is to study the main approaches to the formalization of algorithms for finding solutions to problems in the conditions of counteraction. Get acquainted with approaches to programming artificial intelligence algorithms in games with complete information.
 
 Cram https://en.wikipedia.org/wiki/Cram_(game)
 
-Реалізувати візуальний ігровий додаток для гри користувача з комп'ютерним опонентом. 
-Для реалізації стратегії гри комп'ютерного опонента використовувати алгоритм альфа-бета-відсікань. 
-Реалізувати три рівні складності (легкий, середній, складний)
+Implement a visual game application for the user's game with a computer opponent. To implement the strategy of the computer opponent's game, use the alpha-beta clipping algorithm. Implement three levels of difficulty (easy, medium, difficult)
